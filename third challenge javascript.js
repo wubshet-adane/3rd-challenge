@@ -18,7 +18,7 @@ const countryError = document.getElementById('countryError');
 const imageError = document.getElementById('imageError');
 
 // Validation Patterns
-const usernamePattern = /^[a-zA-Z0-9]{5,}$/;
+const usernamePattern =/^[\w\s]+$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -27,11 +27,11 @@ form.addEventListener('submit', function (event) {
 
     // Username Validation
     if (!usernamePattern.test(username.value)) {
-        usernameError.textContent = "Username must be at least 5 characters long and contain only letters and numbers.";
+        usernameError.textContent = "Username must be contain only letters.";
         usernameError.style.display = 'block';
         valid = false;
     } else {
-        usernameError.style.display = 'none';
+        usernameError.style.display = 'one';
     }
 
     // Email Validation
@@ -64,10 +64,12 @@ form.addEventListener('submit', function (event) {
     // Date of Birth Validation
     const today = new Date();
     const birthDate = new Date(dob.value);
-    if (!dob.value || birthDate >= today) {
-        dobError.textContent = "Please enter a valid birth date in the past.";
+    if (!dob.value) {
+        dobError.textContent = "Please enter a birth date!";
         dobError.style.display = 'block';
         valid = false;
+    } else if(birthDate >= today){
+        dobError.textContent = "Please enter a birth date greater than today!";
     } else {
         dobError.style.display = 'none';
     }

@@ -8,13 +8,30 @@ body {
     margin: 0;
 }
 
+.headerimg{
+    width: fit-content;
+    margin: auto;
+    border-radius: 50%;
+    background-color:#cfff32;
+}
+
+.headerimg img{
+    border-radius: 50%;
+}
+
 .container {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #308f39;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width:400px;
     height: fit-content;
+    margin: 20px;
+
+}
+
+#registrationForm{
+    background-color:#fff;
+    width: 100%;
 }
 
 h2 {
@@ -23,17 +40,23 @@ h2 {
 }
 
 .form-group {
+    padding:10px;
     margin-bottom: 15px;
+}
+
+.checkpassword{
+    display: inline-flex;  
+    border:solid #333;
 }
 
 label {
     display: block;
     font-weight: bold;
-    color: #333;
+    color: #308f39;
 }
 
 input, select {
-    width: 100%;
+    width:95%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -41,19 +64,26 @@ input, select {
     font-size: 14px;
 }
 
+#password{
+    width: 80%;
+    margin-right: 14px;
+}
+
+
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 6px;
+    background-color: #308f39;
     color: #fff;
-    border: none;
+    border: solid #308f39;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 22px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color:#fff;
+    color:#308f39;
 }
 
 .error-message {

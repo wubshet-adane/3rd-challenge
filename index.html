@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="namerandom therd challenge." />
+    <meta name="keywords" content="form, signup, Registration,registrationForm,namerandom" />
+    <meta name="author" content="Wubshet Adane" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.jpg" />
     <title>Registration Form</title>
-    <link rel="stylesheet" href="third challenge css.css">
+    <link rel="stylesheet" href="third challenge css.css" />
 </head>
+
 <body>
     <div class="container">
+        <div class="headerimg">
+            <img src="namerandom.jpg" alt="nameRandom" height="100px" width="100px">
+        </div>
         <h2>SignUp Form</h2>
         <form id="registrationForm">
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" />
                 <small class="error-message" id="usernameError"></small>
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" />
                 <small class="error-message" id="emailError"></small>
             </div>
 
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" />
+                <span class="checkpassword">
+                    <input type="checkbox" id="showPassword" />
+                </span>
                 <small class="error-message" id="passwordError"></small>
             </div>
 
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword">
+                <input type="password" id="confirmPassword" name="confirmPassword" />
                 <small class="error-message" id="confirmPasswordError"></small>
             </div>
-            <div class="form-group" style="display: inline-flex;">
-                <label for="showPassword">show password</label>
-                <input type="checkbox" id="showPassword"> 
-            </div>
+            
             <div class="form-group">
                 <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob">
+                <input type="date" id="dob" name="dob" />
                 <small class="error-message" id="dobError"></small>
             </div>
 
             <div class="form-group">
                 <label for="country">Country:</label>
                 <select id="country" name="country">
-                    <option value="">Select your country</option>
-                    <option value="et">Ethiopia </option>
+                    <option value="">ሀገርዎን ይምረጡ</option>
+                    <option value="et">ኢትዮጲያ</option>
                     <option value="sud">Sudan</option>
                     <option value="kor">korea</option>
                     <option value="sud">Sudan</option>
@@ -60,10 +69,9 @@
                 </select>
                 <small class="error-message" id="countryError"></small>
             </div>
-
             <div class="form-group">
                 <label for="image">Profile Image (PNG/JPG):</label>
-                <input type="file" id="image" name="image" accept="image/png, image/jpeg">
+                <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
                 <small class="error-message" id="imageError"></small>
             </div>
             <button type="submit">submit</button>
@@ -71,4 +79,5 @@
     </div>
     <script src="third challenge javascript.js"></script>
 </body>
+
 </html>
