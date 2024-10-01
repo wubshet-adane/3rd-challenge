@@ -18,10 +18,9 @@ const countryError = document.getElementById('countryError');
 const imageError = document.getElementById('imageError');
 
 // Validation Patterns
-const usernamePattern =/^[\w\s]+$/;
+const usernamePattern = /^[A-Za-z]+$/;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
+const passwordPattern = /^.{9,}$/;
 form.addEventListener('submit', function (event) {
     let valid = true;
 
@@ -29,33 +28,44 @@ form.addEventListener('submit', function (event) {
     if (!usernamePattern.test(username.value)) {
         usernameError.textContent = "Username must be contain only letters.";
         usernameError.style.display = 'block';
+        document.getElementById("username").style.border = "2px solid red";
         valid = false;
     } else {
         usernameError.style.display = 'one';
+        document.getElementById("username").style.border = "2px solid green";
+
     }
 
     // Email Validation
     if (!emailPattern.test(email.value)) {
         emailError.textContent = "Please enter a valid email address.";
         emailError.style.display = 'block';
+        document.getElementById("email").style.border = "2px solid red";
+
         valid = false;
     } else {
         emailError.style.display = 'none';
+        document.getElementById("email").style.border = "2px solid green";
+
     }
 
     // Password Validation
     if (!passwordPattern.test(password.value)) {
-        passwordError.textContent = "Password must be at least 8 characters long, include an uppercase, lowercase, number, and special character.";
+        passwordError.textContent = "Password must be at least 8 characters long.";
+        document.getElementById("password").style.border = "2px solid red";
+
         passwordError.style.display = 'block';
         valid = false;
     } else {
         passwordError.style.display = 'none';
+        document.getElementById("password").style.border = "2px solid green";
     }
 
     // Confirm Password Validation
     if (confirmPassword.value !== password.value) {
-        confirmPasswordError.textContent = "Passwords do not match.";
+        confirmPasswordError.textContent = "Passwords you written are do not match.";
         confirmPasswordError.style.display = 'block';
+        document.getElementById("confirmPassword").style.border = "2px solid red";
         valid = false;
     } else {
         confirmPasswordError.style.display = 'none';
@@ -67,17 +77,25 @@ form.addEventListener('submit', function (event) {
     if (!dob.value) {
         dobError.textContent = "Please enter a birth date!";
         dobError.style.display = 'block';
+        document.getElementById("dob").style.border = "2px solid red";
+
         valid = false;
     } else if(birthDate >= today){
         dobError.textContent = "Please enter a birth date greater than today!";
+        document.getElementById("dob").style.border = "2px solid red";
+
     } else {
         dobError.style.display = 'none';
+        document.getElementById("dob").style.border = "2px solid green";
+
     }
 
     // Country Validation
     if (!country.value) {
         countryError.textContent = "Please select a country.";
         countryError.style.display = 'block';
+        document.getElementById("country").style.border = "2px solid red";
+
         valid = false;
     } else {
         countryError.style.display = 'none';
@@ -90,9 +108,13 @@ form.addEventListener('submit', function (event) {
         if (!validImageTypes.includes(file.type)) {
             imageError.textContent = "Please upload a valid image (PNG/JPG).";
             imageError.style.display = 'block';
+            document.getElementById("image").style.border = "2px solid red";
+
             valid = false;
         } else {
             imageError.style.display = 'none';
+            document.getElementById("image").style.border = "2px solid green";
+
         }
     }
 
